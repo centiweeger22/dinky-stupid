@@ -5264,6 +5264,10 @@ Game.Launch=function()
 			//spawn shimmers
 			for (var i in Game.shimmerTypes)
 			{
+							var newShimmer=new Game.shimmer(i);
+							newShimmer.spawnLead=1;
+							if (Game.Has('Distilled essence of redoubled luck') && Math.random()<0.01) var newShimmer=new Game.shimmer(i);
+							me.spawned=1;
 				var me=Game.shimmerTypes[i];
 				if (me.spawnsOnTimer && me.spawnConditions())//only run on shimmer types that work on a timer
 				{
